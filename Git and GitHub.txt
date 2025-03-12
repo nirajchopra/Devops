@@ -1,0 +1,134 @@
+                                                        Git and GitHub
+
+Main question(***)
+Main question kai ander (**)
+main Point kai liye (*)
+
+
+*** Git kya hai ?
+
+Git kek version control system hai jo software development mai use hota hai. Iska main purpose hai projects kai different versions ko track karna  aur multiple logo ko sath mai kaam karne mai madad karna. Git kai sath, aap apne code main changes track kar sakte ho aur purane versions mai easily wapas ja skate ho.
+
+*** GitHub kya hai ?
+
+GitHub ek platform hai jaha aap apne Git Repositories ko store, share aur manage kar skte ho. Iskause mainly online collaboration aur open-source projects mai hota hai. GitHub pai, aap apne code ko publicly share kar sakte ho taaki dusre log bhi apke project paicontribue kar sake.
+
+*** Git commands aur Unka kaam
+
+** git init
+
+Kaam : Ek naya Git repository banabta hai.
+
+Usage : git init
+
+* Jab aap ek new project start karte ho, toh git init command use karke us folder mai Git initialize karte ho.
+
+
+** git clone
+
+Kaam : GitHub ya kisi aur source sai repository ko apne local system pai copy karta hai.
+
+Usage : git clone <reopistory-url>
+
+* Agar aap kisi existing GitHub repository ko apne computer mai download karna chahte ho, toh git clone command use hoti hai.
+
+
+** git add
+
+Kaam : Files ko staging area mai add karta hai, jisse wo commit kai liye ready ho jaaye.
+
+Usage : git add <file-name>(kisi single file kai liye) ya git add .(sab files ko add karne kai liye)
+
+* git add sai aap changes ko staging mai le jaate ho, jo ki next commit mai include h jaati hai.
+
+
+*** git commit
+
+Kaam : Staged changes ko repository mai save karta hai.
+
+Usage : git command -m(ya -am) "commit message"
+
+* Ye command file changes mko version history mai save karne kai kaam karta hai. Commit kai message sai ye pata chalta hai ki aapne kya change kiya.
+
+
+*** git status
+
+Kaam : Current branch mai changes autr file kai status ko check karta hai.
+
+Usage : git status
+
+* Ye command batata hai ki konsi file modified hai, konsi staged hai, aur konsi untracked hai.
+
+
+*** git log
+
+Kaam : Commit history ko dekhta hai.
+
+Usage : git log
+
+* Ye command aapko commit history dikhta hai, jisme commit messages, commit IDs aur author information hoti hai.
+
+
+*** git branch
+
+Kaam : Branches ko message aur list karta hai.
+
+Usage : git branch (current kbranches dekhne kai liye), git branch <branch-name>(nayi branch banana kai liye)
+
+* Branch ek independent line of development hota hai. Aap new features ya fixed pe alag branch pe kaam kar skte ho without affecting the main code.
+
+
+*** git checkout
+
+Kaam : Branch ko switch ya kisi specific commit ya branch par move karta hai.
+
+Usage : git checkout <branch-name>
+
+* Ye command aapko kisi aur branch mai switch karne ya kisi particular commit ko access karne mai help karta hai.
+
+  
+*** git merge 
+
+Kaam : Do branches ko merge ya combine karta hai.
+
+Usage : git merge <branch-name>
+
+* Ye command do branches kai code ek saath combine karta hai. Mostly, jab ek feature branch ready ho jaata hai, toh use mai branch mai merge kiya jaata hai.
+
+
+*** git pull
+
+Kaam : Remote repository se latest changes ko local repository mai laata hai.
+
+Usage : git pull
+
+* Ye command ka use hota hai jab aap apne local repository mai dusre logo kai changes ko lana chahta ho.
+
+
+*** git push
+
+Kaam : Local changes ko remote repository mai upload karta hai.
+
+Usage : git push
+
+* Jab aap apne changes ko GitHub pe upload karna chahte ho, toh git push command ka use 
+hota hai.
+
+
+*** git remote 
+
+Kaam: Remote repositories ko manage karta hai. 
+
+Usage: git remote add <name> <url> 
+
+* Ye command remote repository ko add ya remove karne ke liye use hota hai. Mostly, remote ko origin naam diya jaata hai. 
+
+
+***  git fetch 
+
+Kaam: Remote repository se latest updates ko download karta hai (merge nahi karta).
+ 
+Usage: git fetch
+ 
+* Ye command changes ko local repository mein download karta hai without merging, taaki 
+aap manually decide kar sako ki merge kab karna hai.

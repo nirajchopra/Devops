@@ -1,0 +1,11 @@
+1. Create repsitory
+2. Code copy
+3. Create folder on desktop git upload
+4. git upload open cmd
+5. git init 
+   git clone pastcode
+6. Readme project copy
+7. open cmd
+8. git add .
+9. git commit -am "done"
+10. git push
