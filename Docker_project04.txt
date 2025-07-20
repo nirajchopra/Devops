@@ -13,9 +13,9 @@ Feature	                                         Fayda (Benefit)
 
 Portability	                                 Kahin bhi chala sakte ho (Linux, Windows, Cloud)
 Lightweight	                                 Virtual machine se bhi halka hota hai
-Fast Startup	                                 Container kuch hi seconds mein ready ho jata hai
-Isolation	                                 Har container alag hota hai — ek doosre ko affect nahi karta
-CI/CD Friendly	                         Jenkins ya GitHub Actions ke sath easily integrate ho jata hai
+Fast Startup	                               Container kuch hi seconds mein ready ho jata hai
+Isolation	                                   Har container alag hota hai — ek doosre ko affect nahi karta
+CI/CD Friendly	                             Jenkins ya GitHub Actions ke sath easily integrate ho jata hai
 
 🏗️ 2. Docker Architecture & Components
 
