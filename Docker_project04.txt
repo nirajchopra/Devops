@@ -6,10 +6,6 @@ Docker is an open-source platform that automates the deployment of applications 
 
 Docker ek open-source platform hai jo application ko chhote aur portable container ke andar chalane aur deploy karne ka kaam karta hai.
 
-📦 Docker Eg:
-
-Jaise shipping container saman ko kahin bhi le jaa sakta hai, waise hi Docker container application ko kahin bhi (server/cloud) chalane layak banata hai.
-
 
 🔍 Features & Fayde
 
