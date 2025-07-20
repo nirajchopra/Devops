@@ -39,6 +39,10 @@ Ek script file hoti hai jisme likha hota hai ki container mein kya kya install/s
 
 Jaise: environment set karna, software install karna, etc.
 
+4. docker-compose.yml
+
+docker-compose.yml file ek configuration file hoti hai jo aapke multiple Docker containers ko ek sath manage karne ke liye use hoti hai.
+Is file ke andar aap define karte ho ki kaunse containers (services) chalenge, unka configuration kya hoga, kaunse ports expose karne hain, kaunse volumes attach karne hain, aur kaunse networks par ye sare containers communicate karenge.
 
 💻 3. Docker Installation Steps
 
