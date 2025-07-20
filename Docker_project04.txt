@@ -46,11 +46,7 @@ Jaise: environment set karna, software install karna, etc.
 2. Download – Windows, Mac, ya Linux ke liye
 3. Install karo
 4. Start karne ke liye:
-
 Windows button →Service → Docker Desktop search karo → Start par click karo
-
-
-
 5. System restart karo
 
 
