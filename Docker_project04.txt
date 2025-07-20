@@ -85,6 +85,13 @@ EXPOSE: 8080 port open karo
 
 CMD: Tomcat ko start karo
 
+ * "catalina.sh run" Kya Hai?
+i) catalina.sh ek bash script hai jo Apache Tomcat server ke saath aati hai.
+
+ii) "run" ek argument hai jo Tomcat ko foreground mein run karne ko kehta hai, yaani server chalu ho jayega aur background mein nahi jayega.
+
+iii) "catalina.sh run" ka matlab hai Tomcat server ko start karo aur woh command prompt ya terminal pe chalu rahe.
+
 
 🛠️ 7. docker-compose.yml File
 
