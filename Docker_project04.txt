@@ -1,342 +1,170 @@
-**🧾 1. Docker Kya Hai?**
-
-
+🧾 1. Docker Kya Hai?
 
 Docker is an open-source platform that automates the deployment of applications inside lightweight, portable containers.
 
-
-
-&nbsp;                                                            **OR**
-
-
+                                                             OR
 
 Docker ek open-source platform hai jo application ko chhote aur portable container ke andar chalane aur deploy karne ka kaam karta hai.
 
-
-
-**📦 Docker Eg:**
-
-
+📦 Docker Eg:
 
 Jaise shipping container saman ko kahin bhi le jaa sakta hai, waise hi Docker container application ko kahin bhi (server/cloud) chalane layak banata hai.
 
 
+🔍 Features & Fayde
 
-
-
-**🔍 Features \& Fayde**
-
-
-
-**Feature**	                                         **Fayda (Benefit)**
-
-
+Feature	                                         Fayda (Benefit)
 
 Portability	                                 Kahin bhi chala sakte ho (Linux, Windows, Cloud)
-
 Lightweight	                                 Virtual machine se bhi halka hota hai
-
 Fast Startup	                                 Container kuch hi seconds mein ready ho jata hai
-
 Isolation	                                 Har container alag hota hai — ek doosre ko affect nahi karta
-
 CI/CD Friendly	                         Jenkins ya GitHub Actions ke sath easily integrate ho jata hai
 
+🏗️ 2. Docker Architecture & Components
 
-
-**🏗️ 2. Docker Architecture \& Components**
-
-
-
-**1. Image**
-
-
+1. Image
 
 Docker image ek pre-configured template hoti hai.
 
-
-
 Ye ek container banane ke liye base ka kaam karti hai.
-
-
 
 Jaise: ubuntu, nginx, mysql, etc.
 
 
-
-
-
-**2. Container**
-
-
+2. Container
 
 Container ek running instance hota hai jo image ke base par banta hai.
 
 
-
-
-
-**3. Dockerfile**
-
-
+3. Dockerfile
 
 Ek script file hoti hai jisme likha hota hai ki container mein kya kya install/step follow karna hai.
-
-
 
 Jaise: environment set karna, software install karna, etc.
 
 
+💻 3. Docker Installation Steps
 
-
-
-**💻 3. Docker Installation Steps**
-
-
-
-1\. Search Docker Desktop
-
-2\. Download – Windows, Mac, ya Linux ke liye
-
-3\. Install karo
-
-4\. Start karne ke liye:
-
-
+1. Search Docker Desktop
+2. Download – Windows, Mac, ya Linux ke liye
+3. Install karo
+4. Start karne ke liye:
 
 Windows button →Service → Docker Desktop search karo → Start par click karo
 
 
 
+5. System restart karo
 
 
+📦 4. Version Check Karna
+
+docker --version
 
 
-5\. System restart karo
-
-
-
-
-
-**📦 4. Version Check Karna**
-
-
-
-*docker --version*
-
-
-
-
-
-**🚀 5. Project Deployment (Tomcat + MySQL example)**
-
-
+🚀 5. Project Deployment (Tomcat + MySQL example)
 
 Step 1: Eclipse mein project kholna
 
-
-
 Step 2: system.properties file open karo
-
-
 
 Usme database connection:
 
-
-
-*url=jdbc:mysql://mysql:3306/project-04*
-
-
+url=jdbc:mysql://mysql:3306/project-04
 
 > Note: localhost ki jagah mysql likhna hai (Docker networking ke liye).
 
 
+🛠️ 6. Dockerfile Banana
 
+FROM tomcat:9
+COPY target/ORS_project4.war /usr/local/tomcat/webapps/ORS_project4.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
 
-
-**🛠️ 6. Dockerfile Banana**
-
-
-
-*FROM tomcat:9*
-
-*COPY target/ORS\_project4.war /usr/local/tomcat/webapps/ORS\_project4.war*
-
-*EXPOSE 8080*
-
-*CMD \["catalina.sh", "run"]*
-
-
-
-**Explanation:**
-
-
+Explanation:
 
 FROM: Tomcat image ka use karo
 
-
-
 COPY: WAR file tomcat ke folder mein copy karo
 
-
-
 EXPOSE: 8080 port open karo
-
-
 
 CMD: Tomcat ko start karo
 
 
+🛠️ 7. docker-compose.yml File
 
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: orsproject4-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: project-04
+    ports:
+      - "3306:3306"
+    networks:
+      - mynetwork
+    volumes:
+      - ./mysql-data:/var/lib/mysql
 
+  webapp:
+    build:
+      context: .
+    container_name: orsproject4-webapp
+    ports:
+      - "8080:8080"
+    networks:
+      - mynetwork
+    depends_on:
+      - mysql
+    environment:
+      - DATABASE_URL=jdbc:mysql://mysql:3306/project-04
 
-**🛠️ 7. docker-compose.yml File**
+networks:
+  mynetwork:
+    driver: bridge
 
-
-
-*version: '3'*
-
-*services:*
-
-  *mysql:*
-
-    *image: mysql:8.0*
-
-    *container\_name: orsproject4-mysql*
-
-    *environment:*
-
-      *MYSQL\_ROOT\_PASSWORD: root*
-
-      *MYSQL\_DATABASE: project-04*
-
-    *ports:*
-
-      *- "3306:3306"*
-
-    *networks:*
-
-      *- mynetwork*
-
-    *volumes:*
-
-      *- ./mysql-data:/var/lib/mysql*
-
-
-
-  *webapp:*
-
-    *build:*
-
-      *context: .*
-
-    *container\_name: orsproject4-webapp*
-
-    *ports:*
-
-      *- "8080:8080"*
-
-    *networks:*
-
-      *- mynetwork*
-
-    *depends\_on:*
-
-      *- mysql*
-
-    *environment:*
-
-      *- DATABASE\_URL=jdbc:mysql://mysql:3306/project-04*
-
-
-
-*networks:*
-
-  *mynetwork:*
-
-    *driver: bridge*
-
-
-
-**Line-by-line Explaination:**
-
-
+Line-by-line Explaination:
 
 version: Docker Compose ka version
 
-
-
 services: Dono containers define kar rahe hain — MySQL aur Webapp
-
-
 
 image: MySQL ke liye image use kar rahe hain
 
-
-
 build: Tomcat ke liye Dockerfile se image banayenge
-
-
 
 ports: Local aur container port map kar rahe hain
 
-
-
 environment: Password aur DB name set kar rahe hain
 
-
-
-depends\_on: Webapp, MySQL pe depend karega
-
-
+depends_on: Webapp, MySQL pe depend karega
 
 volumes: MySQL data ko local folder mein store karenge
-
-
 
 networks: Dono containers ek hi network mein hain
 
 
+🧾 Final Steps
+
+1. WAR file ko Docker project folder mein paste karo (webapps ke andar)
+
+
+2. Docker application open karo
+
+
+3. Jahan Dockerfile aur docker-compose.yml hai, vahan jaake CMD mein ye command chalao:
+
+docker-compose build
+docker-compose up
 
 
 
-**🧾 Final Steps**
+🔗 Access Project on Browser
 
-
-
-1\. WAR file ko Docker project folder mein paste karo (webapps ke andar)
-
-
-
-
-
-2\. Docker application open karo
-
-
-
-
-
-3\. Jahan Dockerfile aur docker-compose.yml hai, vahan jaake CMD mein ye command chalao:
-
-
-
-*docker-compose build*
-
-*docker-compose up*
-
-
-
-
-
-
-
-**🔗 Access Project on Browser**
-
-
-
-*http://localhost:8080/ORS\_project4*
-
-
-
-
+http://localhost:8080/ORS_project4
 
