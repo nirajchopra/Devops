@@ -6,10 +6,6 @@ Docker is an open-source platform that automates the deployment of applications 
 
 Docker ek open-source platform hai jo application ko chhote aur portable container ke andar chalane aur deploy karne ka kaam karta hai.
 
-📦 Docker Eg:
-
-Jaise shipping container saman ko kahin bhi le jaa sakta hai, waise hi Docker container application ko kahin bhi (server/cloud) chalane layak banata hai.
-
 
 🔍 Features & Fayde
 
@@ -17,9 +13,9 @@ Feature	                                         Fayda (Benefit)
 
 Portability	                                 Kahin bhi chala sakte ho (Linux, Windows, Cloud)
 Lightweight	                                 Virtual machine se bhi halka hota hai
-Fast Startup	                                 Container kuch hi seconds mein ready ho jata hai
-Isolation	                                 Har container alag hota hai — ek doosre ko affect nahi karta
-CI/CD Friendly	                         Jenkins ya GitHub Actions ke sath easily integrate ho jata hai
+Fast Startup	                               Container kuch hi seconds mein ready ho jata hai
+Isolation	                                   Har container alag hota hai — ek doosre ko affect nahi karta
+CI/CD Friendly	                             Jenkins ya GitHub Actions ke sath easily integrate ho jata hai
 
 🏗️ 2. Docker Architecture & Components
 
@@ -43,6 +39,10 @@ Ek script file hoti hai jisme likha hota hai ki container mein kya kya install/s
 
 Jaise: environment set karna, software install karna, etc.
 
+4. docker-compose.yml
+
+docker-compose.yml file ek configuration file hoti hai jo aapke multiple Docker containers ko ek sath manage karne ke liye use hoti hai.
+Is file ke andar aap define karte ho ki kaunse containers (services) chalenge, unka configuration kya hoga, kaunse ports expose karne hain, kaunse volumes attach karne hain, aur kaunse networks par ye sare containers communicate karenge.
 
 💻 3. Docker Installation Steps
 
@@ -50,11 +50,7 @@ Jaise: environment set karna, software install karna, etc.
 2. Download – Windows, Mac, ya Linux ke liye
 3. Install karo
 4. Start karne ke liye:
-
 Windows button →Service → Docker Desktop search karo → Start par click karo
-
-
-
 5. System restart karo
 
 
@@ -92,6 +88,13 @@ COPY: WAR file tomcat ke folder mein copy karo
 EXPOSE: 8080 port open karo
 
 CMD: Tomcat ko start karo
+
+ * "catalina.sh run" Kya Hai?
+i) catalina.sh ek bash script hai jo Apache Tomcat server ke saath aati hai.
+
+ii) "run" ek argument hai jo Tomcat ko foreground mein run karne ko kehta hai, yaani server chalu ho jayega aur background mein nahi jayega.
+
+iii) "catalina.sh run" ka matlab hai Tomcat server ko start karo aur woh command prompt ya terminal pe chalu rahe.
 
 
 🛠️ 7. docker-compose.yml File
