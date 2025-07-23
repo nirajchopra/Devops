@@ -1,0 +1,70 @@
+DOCKER :- Docker hume container banane mai help karta hai taaki hum kisi bhi Application or Project ki image create kar sake aur kisi ko bhi easily share kar sake
+                   Docker container kisi bhi system mai easily chal sakta hai (windows, macOS, linux).
+
+
+
+Portable :- Ek machine sai dusri machine par easily share kar sakte hai.
+
+
+
+Lightweight :- Means bahut easily build, update aur destroy kar sakta hai.
+
+
+
+Docker Image:- Docker container ek executable file hoti. yeh Image ka matlab hai , Jis file kai ander instruction hote hai ki kis Tarah sai container hona chahiye.
+                            This is also called Screenshot and Snapshot.
+
+
+
+Docker Container :- Container basically ek single bundle hai ya ek single unit hai Jisme humne Application along with dependencies ko combine kar diya hai or pack kar diya  
+                                   hai into the single unit. 
+
+
+
+DOCKER HUB :- Docker Hub ek online platform hai jaha Docker images ko store, share aur manage kiya jata hai .
+
+                            Yeh bilkul GitHub kai jaise hota hai lekin code ki bajaye yaha images hoti hai.
+
+                            Docker Hub ek Google Drive jaise hota hai lekin Software images kai liye. Jaha hum apna ready-made software(image) upload karte ho, aur koi bhi usse     
+                            download kar sakta hai. Jaise tum GitHub par code share karte ho, waise hi docker mai image bhi share hoti hai.
+
+
+
+NOTE : Docker Daemon means ek process hoti hai jo container ko create, run manage, stop, delete karta hai.
+
+Dockerfile :- Ek script file hoti hai jisme likha hota hai ki container mein kya kya install/step follow karna hai.
+
+                     Jaise: environment set karna, software install karna, etc.
+
+
+
+docker-compose.yml :- ek  configration file hoti hai jo apke Project kai multiple containers ko ek saath define, configure, aur manage karne kai liye use hoti hai.
+
+                                         yeh file YAML format mai likhi jati hai (YAML = Yet Another Markup Language).
+
+
+
+
+
+BASIC COMMANDS
+
+
+
+1. docker pull IMAGE_NAME
+2. docker images
+3. docker run -it IMAGE_NAME 
+4. docker stop CONT_NAME or CONT_ID
+5. docker start CONT_NAME or CONT_ID
+6. docker ps
+7. docker rm CONT_NAME
+8. docker rmi IMAGE_NAME
+9. docker pull IMAGE_NAME:version
+10. docker run -d IMAGE_NAME
+11. docker run --name CONT_NAME -d IMAGE_NAME
+
+
+
+NOTE : -it(interactive mode) means jisme hum uske terminal par access kar payenge.
+
+            -d(detached) means jab apna koi container run karte hai aur -f aur -d lagate hai to container background mai run hota rahega.
+
